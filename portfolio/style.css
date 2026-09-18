@@ -583,10 +583,15 @@ Start of the projects section
     transform: scale(1.02);
 }
 
-.project-card img {
+.project-media {
+    width: min(100%, 300px);
+    height: 200px;
     align-self: center;
-    max-width: 300px;
-    max-height: 200px;
+}
+
+.project-media img {
+    width: 100%;
+    height: 100%;
     border-radius: 2rem;
     object-fit: cover;
 }
@@ -607,10 +612,9 @@ Start of the projects section
 
 .project-placeholder {
     display: grid;
-    width: min(100%, 300px);
-    height: 200px;
+    width: 100%;
+    height: 100%;
     place-items: center;
-    align-self: center;
     border: 2px solid var(--main-color);
     border-radius: 2rem;
     background: var(--second-bg-color);
@@ -620,6 +624,10 @@ Start of the projects section
 .project-placeholder i {
     color: var(--main-color);
     font-size: 9rem;
+}
+
+.project-placeholder[hidden] {
+    display: none;
 }
 
 .project-framework {
