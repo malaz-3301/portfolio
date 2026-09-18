@@ -388,14 +388,16 @@ Start of the skills section
 
 .skill-card h3 {
     font-family: "Poppins";
-    font-size: 2.6rem;
+    font-size: 2.1rem;
     line-height: 1.25;
 }
 
 .skill-card ul {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.2rem;
+    row-gap: 0.8rem;
+    column-gap: 2.8rem;
+    align-content: start;
     list-style: none;
 }
 
@@ -403,12 +405,13 @@ Start of the skills section
     position: relative;
     display: flex;
     min-width: 0;
-    align-items: center;
-    padding: 0.7rem 0 0.7rem 1.6rem;
+    min-height: 4.5rem;
+    align-items: flex-start;
+    padding: 0.6rem 0 0.6rem 1.6rem;
     color: #e5e5e5;
     font-family: "Poppins";
-    font-size: 1.8rem;
-    line-height: 1.5;
+    font-size: 2rem;
+    line-height: 1.35;
 }
 
 .skill-card li::before {
@@ -608,6 +611,137 @@ Start of the projects section
     opacity: 0.8;
 }
 
+/*
+---------------------------------------------------------------------------------
+Certificates section
+*/
+.certificates {
+    min-height: auto;
+    background: var(--bg-color);
+}
+
+.certificates-intro {
+    max-width: 72rem;
+    margin: -2rem auto 5rem;
+    color: #cfcfcf;
+    font-family: "Poppins";
+    font-size: 1.8rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+}
+
+.certificate-card {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    border: 2px solid rgba(234, 88, 12, 0.72);
+    border-radius: 2.4rem;
+    background: var(--second-bg-color);
+    box-shadow: 0 0 10px rgba(234, 88, 12, 0.22);
+    transition: 0.35s ease-in-out;
+}
+
+.certificate-card:hover {
+    border-color: var(--main-color);
+    box-shadow: 0 0 28px rgba(234, 88, 12, 0.5);
+    transform: translateY(-0.7rem);
+}
+
+.certificate-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(234, 88, 12, 0.45);
+    background: white;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.4s ease-in-out;
+}
+
+.certificate-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: white;
+    background: rgba(8, 8, 8, 0.78);
+    font-family: "Poppins";
+    font-size: 1.7rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.certificate-image:hover img {
+    transform: scale(1.025);
+}
+
+.certificate-image:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 2.8rem;
+}
+
+.certificate-issuer {
+    margin-bottom: 1rem;
+    color: var(--main-color);
+    font-family: "Poppins";
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.certificate-card h3 {
+    margin-bottom: 1.2rem;
+    font-family: "Poppins";
+    font-size: 2.3rem;
+    line-height: 1.35;
+}
+
+.certificate-meta {
+    color: #bdbdbd;
+    font-family: "Poppins";
+    font-size: 1.45rem;
+    line-height: 1.6;
+}
+
+.certificate-action {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.7rem;
+    margin-top: auto;
+    padding-top: 2.2rem;
+    color: var(--main-color);
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.certificate-action:hover {
+    color: #ff8a3d;
+}
+
 /*  
 Start of Contact Form
 */
@@ -683,6 +817,9 @@ Start of footer section
 
 @media(max-width:1200px) {
     .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .certificates-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -792,6 +929,13 @@ Start of footer section
     }
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    .certificates-intro {
+        margin-bottom: 3.5rem;
+        font-size: 1.6rem;
     }
     .projects h2{
         font-size: 4rem;
