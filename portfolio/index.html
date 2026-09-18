@@ -79,8 +79,10 @@
             <h2>About <span>Me</span></h2>
             <p>
                 I’m Malaz Ahmad, a fifth-year Information Engineering student specializing in Artificial
-                Intelligence and a backend developer building APIs, microservices, data-driven systems,
-                and well-tested software.
+                Intelligence and a backend developer focused on APIs, microservices, and data-driven systems.
+                I work with NestJS, Spring Boot, and Laravel across database design, business logic, testing,
+                and deployment. Alongside backend development, I apply AI and NLP techniques when they offer
+                a practical solution to the problem.
             </p>
             <a href="#" class="btn">Read More</a>
         </div>
@@ -115,7 +117,6 @@
                     <li><i class="bx bx-chevron-right"></i>Event-Driven Systems</li>
                     <li><i class="bx bx-chevron-right"></i>RabbitMQ</li>
                     <li><i class="bx bx-chevron-right"></i>DDD</li>
-                    <li><i class="bx bx-chevron-right"></i>Concurrency Control</li>
                 </ul>
             </article>
 
@@ -127,7 +128,6 @@
                 <ul>
                     <li><i class="bx bx-chevron-right"></i>PostgreSQL</li>
                     <li><i class="bx bx-chevron-right"></i>Redis</li>
-                    <li><i class="bx bx-chevron-right"></i>Data Modeling</li>
                     <li><i class="bx bx-chevron-right"></i>Query Optimization</li>
                     <li><i class="bx bx-chevron-right"></i>Transactions & Locking</li>
                     <li><i class="bx bx-chevron-right"></i>Geospatial Queries</li>
@@ -158,10 +158,7 @@
                 <ul>
                     <li><i class="bx bx-chevron-right"></i>NLP</li>
                     <li><i class="bx bx-chevron-right"></i>PyTorch</li>
-                    <li><i class="bx bx-chevron-right"></i>Embeddings</li>
                     <li><i class="bx bx-chevron-right"></i>NLI</li>
-                    <li><i class="bx bx-chevron-right"></i>Information Retrieval</li>
-                    <li><i class="bx bx-chevron-right"></i>Model Evaluation</li>
                     <li><i class="bx bx-chevron-right"></i>Experta</li>
                 </ul>
             </article>
@@ -219,12 +216,16 @@
         <div class="projects-box">
             <div class="project-card">
                 <img src="project2.jpg" alt="EasyRent microservices architecture">
-                <h3>EasyRent Property Platform</h3>
+                <span class="project-framework"><i class="fab fa-node-js"></i> NestJS</span>
+                <h3>EasyRent Real Estate Platform</h3>
                 <p>
                     A property platform developed first as a modular monolith, then evolved into an
                     eight-service, message-driven architecture with geospatial search, caching, load balancing,
                     subscriptions, and automated testing.</p>
-                <p class="project-stack">NestJS · PostgreSQL · PostGIS · RabbitMQ · Redis · Docker · Nginx</p>
+                <div class="project-tags" aria-label="Technologies used">
+                    <span>PostgreSQL</span><span>PostGIS</span><span>RabbitMQ</span>
+                    <span>Redis</span><span>Docker</span><span>Nginx</span>
+                </div>
                 <div class="project-actions">
                     <div class="btn"><a href="https://github.com/malaz-3301/properties"
                             target="_blank" rel="noreferrer">Monolith</a></div>
@@ -235,43 +236,56 @@
 
             <div class="project-card">
                 <div class="project-placeholder"><i class="bx bx-transfer"></i></div>
-                <h3>Concurrent Commerce Backend</h3>
+                <span class="project-framework"><i class="fab fa-node-js"></i> NestJS</span>
+                <h3>Concurrent Order Processing Backend</h3>
                 <p>
-                    A queue-based NestJS commerce backend focused on safe concurrent operations, retries,
+                    A queue-based backend focused on safe concurrent operations, retries,
                     database locking, daily aggregation, and measurable load performance.</p>
-                <p class="project-stack">NestJS · BullMQ · Redis · PostgreSQL · JMeter</p>
+                <div class="project-tags" aria-label="Technologies used">
+                    <span>BullMQ</span><span>Redis</span><span>PostgreSQL</span>
+                    <span>JMeter</span><span>Docker</span>
+                </div>
                 <div class="btn"><a href="https://github.com/malaz-3301/Parallel-Programming"
                         target="_blank" rel="noreferrer">Review Project</a></div>
             </div>
 
             <div class="project-card">
                 <div class="project-placeholder"><i class="bx bx-book"></i></div>
-                <h3>Book E-commerce Platform</h3>
+                <span class="project-framework"><i class="fas fa-leaf"></i> Spring Boot</span>
+                <h3>Online Bookstore Platform</h3>
                 <p>
-                    A complete bookstore workflow with JWT authentication, catalog management, orders,
+                    A full-stack bookstore with JWT authentication, book and category management, orders,
                     reviews, and role-based administration.</p>
-                <p class="project-stack">Spring Boot · Spring Security · PostgreSQL · React</p>
+                <div class="project-tags" aria-label="Technologies used">
+                    <span>Spring Security</span><span>PostgreSQL</span><span>React</span><span>Docker</span>
+                </div>
                 <div class="btn"><a href="https://github.com/malaz-3301/Book-E-commerce-Platform"
                         target="_blank" rel="noreferrer">Review Project</a></div>
             </div>
 
             <div class="project-card">
                 <div class="project-placeholder"><i class="bx bx-check-shield"></i></div>
-                <h3>FactNLI</h3>
+                <span class="project-framework"><i class="fas fa-bolt"></i> FastAPI</span>
+                <h3>FactNLI Evidence Verification Platform</h3>
                 <p>
                     Arabic and English fact-checking platform that retrieves evidence, ranks relevant passages,
                     applies Natural Language Inference, and produces reviewable verdicts.</p>
-                <p class="project-stack">FastAPI · PyTorch · FAISS · PostgreSQL · React</p>
+                <div class="project-tags" aria-label="Technologies used">
+                    <span>PyTorch</span><span>FAISS</span><span>PostgreSQL</span><span>React</span>
+                </div>
                 <div class="btn project-status">Private Repository</div>
             </div>
 
             <div class="project-card">
                 <div class="project-placeholder"><i class="fab fa-laravel"></i></div>
-                <h3>E-commerce Project</h3>
+                <span class="project-framework"><i class="fab fa-laravel"></i> Laravel</span>
+                <h3>Clothing E-commerce API</h3>
                 <p>
-                    Designed RESTful APIs for catalog, cart, orders, and users with authentication,
-                    authorization, and validation.</p>
-                <p class="project-stack">Laravel · REST APIs · Authentication · Authorization · Validation</p>
+                    Backend APIs for a clothing store, covering products, carts, orders, and users with
+                    authentication, authorization, and request validation.</p>
+                <div class="project-tags" aria-label="Technologies used">
+                    <span>PHP</span><span>REST API</span><span>Authentication</span><span>Validation</span>
+                </div>
                 <div class="btn project-status">Private Repository</div>
             </div>
 
@@ -296,10 +310,9 @@
                     <p class="certificate-issuer">Syrian American Engineers Association</p>
                     <h3>Software Engineering Bootcamp</h3>
                     <p class="certificate-meta">Issued June 2026 · Certificate SAEA-SEB-2026-1009</p>
-                    <a class="certificate-action"
-                        href="certificates/SAEA_SE_Bootcamp_Certificates_MOHAMMAD_MALAZ_AHMAD.png"
+                    <a class="certificate-action" href="https://saea-us.org/"
                         target="_blank" rel="noreferrer">
-                        View credential <i class="bx bx-link-external"></i>
+                        Visit issuer <i class="bx bx-link-external"></i>
                     </a>
                 </div>
             </article>

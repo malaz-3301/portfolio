@@ -291,7 +291,9 @@ Start of the About Me Section
 }
 
 .about-img img {
-    width: 32vw;
+    width: min(29vw, 44rem);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     transition: 0.4s ease-in-out;
@@ -310,7 +312,8 @@ Start of the About Me Section
 
 .about-content p {
     text-align: left;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
+    line-height: 1.8;
 }
 
 .about-content .btn {
@@ -407,21 +410,36 @@ Start of the skills section
     min-width: 0;
     min-height: 4.5rem;
     align-items: flex-start;
-    padding: 0.6rem 0 0.6rem 1.6rem;
+    padding: 0.7rem 0.8rem 0.7rem 2.6rem;
+    border-radius: 0.8rem;
     color: #e5e5e5;
     font-family: "Poppins";
-    font-size: 2.15rem;
-    line-height: 1.35;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .skill-card li::before {
     position: absolute;
-    left: 0;
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 50%;
-    background: var(--main-color);
-    content: "";
+    top: 0.8rem;
+    left: 0.6rem;
+    color: var(--main-color);
+    content: ">";
+    font-family: monospace;
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.skill-card li:hover {
+    color: white;
+    background: rgba(234, 88, 12, 0.12);
+    transform: translateX(0.5rem);
+}
+
+.skill-card li:hover::before {
+    transform: translateX(0.2rem);
 }
 
 .skill-card li i {
@@ -532,16 +550,16 @@ Start of the projects section
 .project-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: left;
     background-color: var(--bg-color);
     border: 2px solid var(--main-color);
     border-radius: 3rem;
-    gap: 2rem;
-    padding: 5rem 2rem;
+    gap: 1.6rem;
+    padding: 3.5rem 2.5rem;
     overflow: hidden;
-    cursor: pointer;
+    cursor: default;
     box-shadow: 0 0 5px var(--main-color);
     transition: 0.3s ease;
     height: 100%; /* يملأ الشبكة بنفس الطول */
@@ -555,7 +573,7 @@ Start of the projects section
 .project-actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
 }
 
@@ -566,6 +584,7 @@ Start of the projects section
 }
 
 .project-card img {
+    align-self: center;
     max-width: 300px;
     max-height: 200px;
     border-radius: 2rem;
@@ -573,14 +592,16 @@ Start of the projects section
 }
 
 .project-card h3 {
-    font-size: 3rem;
+    font-size: 2.7rem;
+    line-height: 1.3;
 }
 
 .project-card p {
     font-size: 1.6rem;
+    line-height: 1.7;
 }
 
-.project-card > p:not(.project-stack) {
+.project-card > p {
     flex-grow: 1;
 }
 
@@ -589,6 +610,7 @@ Start of the projects section
     width: min(100%, 300px);
     height: 200px;
     place-items: center;
+    align-self: center;
     border: 2px solid var(--main-color);
     border-radius: 2rem;
     background: var(--second-bg-color);
@@ -600,10 +622,52 @@ Start of the projects section
     font-size: 9rem;
 }
 
-.project-card .project-stack {
-    color: var(--main-color);
-    font-size: 1.4rem;
+.project-framework {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.8rem;
+    padding: 0.7rem 1.3rem;
+    border: 1px solid var(--main-color);
+    border-radius: 999px;
+    color: white;
+    background: linear-gradient(135deg, rgba(223, 152, 8, 0.2), rgba(255, 29, 21, 0.18));
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    font-family: "Poppins";
+    font-size: 1.45rem;
     font-weight: 600;
+}
+
+.project-framework i {
+    color: var(--main-color);
+    font-size: 1.8rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.project-tags span {
+    padding: 0.55rem 1.1rem;
+    border: 1px solid rgba(234, 88, 12, 0.55);
+    border-radius: 999px;
+    color: #f2f2f2;
+    background: rgba(234, 88, 12, 0.08);
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-text-fill-color: currentColor;
+    font-family: "Poppins";
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.project-card > .btn,
+.project-status {
+    align-self: flex-start;
 }
 
 .project-status {
