@@ -135,7 +135,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15rem;
+    gap: clamp(6rem, 7vw, 11rem);
 }
 
 .home-content {
@@ -184,7 +184,7 @@ section {
 }
 
 .typing-line {
-    width: 50rem;
+    width: 100%;
     min-height: 5.5rem;
 }
 
@@ -410,7 +410,7 @@ Start of the skills section
     padding: 0.6rem 0 0.6rem 1.6rem;
     color: #e5e5e5;
     font-family: "Poppins";
-    font-size: 2rem;
+    font-size: 2.15rem;
     line-height: 1.35;
 }
 
