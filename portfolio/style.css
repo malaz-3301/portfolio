@@ -140,6 +140,8 @@ section {
 
 .home-content {
     display: flex;
+    min-width: 0;
+    flex: 1 1 55rem;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
@@ -173,10 +175,17 @@ section {
 }
 
 #typing-text {
+    display: inline-block;
     font-family: "Poppins";
     border-right: 3px solid var(--bg-color);
     padding-right: 5px;
+    white-space: nowrap;
     animation: blink 0.8s step-end infinite;
+}
+
+.typing-line {
+    width: 50rem;
+    min-height: 5.5rem;
 }
 
 @keyframes blink {
@@ -196,6 +205,10 @@ section {
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
     transition: 0.4s ease-in-out;
+}
+
+.home-img {
+    flex: 0 0 auto;
 }
 
 .home-img img:hover {
@@ -331,7 +344,7 @@ Start of the skills section
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 32rem), 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2.5rem;
 }
 
@@ -375,7 +388,7 @@ Start of the skills section
 
 .skill-card h3 {
     font-family: "Poppins";
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     line-height: 1.25;
 }
 
@@ -387,23 +400,29 @@ Start of the skills section
 }
 
 .skill-card li {
+    position: relative;
     display: flex;
     min-width: 0;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.2rem;
-    border-left: 3px solid var(--main-color);
-    border-radius: 0.8rem;
+    padding: 0.7rem 0 0.7rem 1.6rem;
     color: #e5e5e5;
-    background: #151515;
     font-family: "Poppins";
-    font-size: 1.35rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+.skill-card li::before {
+    position: absolute;
+    left: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    content: "";
 }
 
 .skill-card li i {
-    flex: 0 0 auto;
-    color: var(--main-color);
-    font-size: 1.8rem;
+    display: none;
 }
 
 
@@ -528,6 +547,13 @@ Start of the projects section
 
 .project-card a {
     color: var(--bg-color);
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .project-card:hover {
@@ -655,6 +681,12 @@ Start of footer section
     font-size: 16px;
 }
 
+@media(max-width:1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media(max-width:768px) {
 
     .header {
@@ -714,6 +746,11 @@ Start of footer section
     .home-content h3{
         font-size: 2rem;
     }
+    .typing-line {
+        width: 26rem;
+        min-height: 3rem;
+        text-align: center;
+    }
 
     .home-content p {
         font-size: 1rem;
@@ -752,6 +789,9 @@ Start of footer section
 
     .skills h2 {
         font-size: 4rem;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
     .projects h2{
         font-size: 4rem;

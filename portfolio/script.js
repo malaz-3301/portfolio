@@ -11,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const words = [
         '<i class="fab fa-node-js"></i> NestJs Developer',
         '<i class="fab fa-laravel"></i> Laravel Developer',
-        '<i class="fas fa-user-graduate"></i> 4th-year ITE student',
+        '<i class="fas fa-leaf"></i> Spring Boot Developer',
+        '<i class="fas fa-user-graduate"></i> 5th-year ITE student',
     ];
 
     const typingTextElement = document.getElementById('typing-text');
