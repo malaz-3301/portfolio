@@ -21,6 +21,7 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 .header {
@@ -30,7 +31,7 @@ body {
     top: 0;
     left: 0;
     padding: 3rem 15%;
-    background: black rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.82);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -290,7 +291,17 @@ Start of the About Me Section
     background: var(--second-bg-color);
 }
 
+.about-img {
+    flex: 0 0 auto;
+}
+
+.about-content {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
 .about-img img {
+    display: block;
     width: min(29vw, 44rem);
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -628,14 +639,23 @@ Start of the projects section
 }
 
 .project-media {
+    position: relative;
     width: min(100%, 300px);
-    height: 200px;
+    aspect-ratio: 3 / 2;
+    flex: 0 0 auto;
     align-self: center;
 }
 
-.project-media img {
+.project-media img,
+.project-placeholder {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
+}
+
+.project-media img {
+    display: block;
     border-radius: 2rem;
     object-fit: cover;
 }
@@ -656,8 +676,6 @@ Start of the projects section
 
 .project-placeholder {
     display: grid;
-    width: 100%;
-    height: 100%;
     place-items: center;
     border: 2px solid var(--main-color);
     border-radius: 2rem;
@@ -922,7 +940,7 @@ Start of footer section
 }
 
 .footer ul li a:hover {
-    border-bottom: epx solid var(--main-color);
+    border-bottom: 3px solid var(--main-color);
 }
 
 .footer .copyright {
@@ -932,6 +950,31 @@ Start of footer section
 }
 
 @media(max-width:1200px) {
+    section {
+        padding: 9rem 7%;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .navbar a {
+        margin-left: 2rem;
+    }
+
+    .gradient-btn {
+        padding: 0.9rem 1.5rem;
+        font-size: 1.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 7rem;
+    }
+
+    .home-content h3 {
+        font-size: 3.5rem;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -940,7 +983,11 @@ Start of footer section
     }
 }
 
-@media(max-width:768px) {
+@media(max-width:900px) {
+
+    section {
+        padding: 8rem 6%;
+    }
 
     .header {
         padding: 1.2rem 5%;
@@ -959,9 +1006,9 @@ Start of footer section
         position: absolute;
         top: 100%;
         right: 0;
-        width: 50%;
-        padding: 1rem 3rem;
-        background: rgba(0, 0, 0, 0.8);
+        width: min(80vw, 32rem);
+        padding: 1rem 2.5rem;
+        background: rgba(0, 0, 0, 0.96);
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
@@ -985,12 +1032,17 @@ Start of footer section
 
     .home {
         flex-direction: column-reverse;
-        margin: 5rem 0;
-        gap: 5rem;
+        min-height: auto;
+        margin: 0;
+        padding-top: 11rem;
+        gap: 4rem;
     }
 
     .home-content {
+        width: 100%;
+        flex: 0 1 auto;
         align-items: center;
+        text-align: center;
     }
     .home-content h1 {
         font-size: 4rem;
@@ -1000,33 +1052,43 @@ Start of footer section
         font-size: 2rem;
     }
     .typing-line {
-        width: 26rem;
+        width: 100%;
         min-height: 3rem;
         text-align: center;
     }
 
     .home-content p {
-        font-size: 1rem;
-        font-weight: 100;
-        line-height: 3;
+        max-width: 42rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.7;
+        text-align: center;
     }
 
     .home-img {
         width: auto;
     }
+
+    .home-img img {
+        width: min(68vw, 30rem);
+    }
+
     .social-icons a {
         font-size: 2rem;
         padding: 0.8rem;
+        margin: 2rem 0.35rem;
     }
     .btn {
         border-radius: 3rem;
-        font-size: 1.2rem;
+        padding: 0.9rem 2.2rem;
+        font-size: 1.4rem;
         border: 0px solid transparent;
         font-weight: 500;
     }
 
     .about {
         flex-direction: column-reverse;
+        gap: 4rem;
         text-align: center;
     }
 
@@ -1038,6 +1100,15 @@ Start of footer section
 
     .about img {
         width: 52vw;
+    }
+
+    .about-content p {
+        font-size: 1.8rem;
+        line-height: 1.75;
+    }
+
+    .about-content .btn {
+        margin: 2rem 0 0;
     }
 
     .skills h2 {
@@ -1053,21 +1124,66 @@ Start of footer section
         margin-bottom: 3.5rem;
         font-size: 1.6rem;
     }
+    .certificates h2 {
+        font-size: 4rem;
+        line-height: 1.15;
+    }
     .projects h2{
         font-size: 4rem;
     }
+
+    .projects-box {
+        row-gap: 3rem;
+    }
+
+    .project-card {
+        padding: 2.8rem 2rem;
+        border-radius: 2.4rem;
+    }
+
+    .project-card h3 {
+        font-size: 2.4rem;
+    }
+
+    .certificate-card-body {
+        padding: 2.2rem;
+    }
+
     .contact form {
         flex-direction: column;
     }
 }
 
 @media(max-width:480px) {
+    .heading,
+    .skills h2,
+    .projects h2,
+    .certificates h2 {
+        font-size: 3.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 3.6rem;
+    }
+
     .skill-card {
         padding: 2.4rem;
     }
 
     .skill-card ul {
         grid-template-columns: 1fr;
+    }
+
+    .footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.2rem;
+        padding: 0 2rem;
+    }
+
+    .footer ul li {
+        margin-left: 0;
     }
 }
 

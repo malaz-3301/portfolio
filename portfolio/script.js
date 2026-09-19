@@ -1,10 +1,36 @@
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
+function toggleMenu() {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-};
+    menuIcon.setAttribute('aria-expanded', navbar.classList.contains('active'));
+}
+
+function closeMenu() {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+    menuIcon.setAttribute('aria-expanded', 'false');
+}
+
+menuIcon.onclick = toggleMenu;
+
+menuIcon.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleMenu();
+    }
+});
+
+document.querySelectorAll('.navbar a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+        closeMenu();
+    }
+});
 
 // Typing animation with icons
 document.addEventListener("DOMContentLoaded", function () {
