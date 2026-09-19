@@ -84,7 +84,7 @@
                 and deployment. Alongside backend development, I apply AI and NLP techniques when they offer
                 a practical solution to the problem.
             </p>
-            <a href="#" class="btn">Read More</a>
+            <a href="#skills" class="btn">View Skills</a>
         </div>
     </section>
     <!-- Skills section -->
@@ -114,7 +114,6 @@
                 <ul>
                     <li><i class="bx bx-chevron-right"></i>Distributed Systems</li>
                     <li><i class="bx bx-chevron-right"></i>Microservices</li>
-                    <li><i class="bx bx-chevron-right"></i>Event-Driven Systems</li>
                     <li><i class="bx bx-chevron-right"></i>RabbitMQ</li>
                     <li><i class="bx bx-chevron-right"></i>DDD</li>
                 </ul>
@@ -142,24 +141,10 @@
                 <ul>
                     <li><i class="bx bx-chevron-right"></i>Unit Testing</li>
                     <li><i class="bx bx-chevron-right"></i>Integration Testing</li>
-                    <li><i class="bx bx-chevron-right"></i>Performance Testing</li>
-                    <li><i class="bx bx-chevron-right"></i>JMeter</li>
+                    <li class="skill-wide"><i class="bx bx-chevron-right"></i>Performance Testing / JMeter</li>
                     <li><i class="bx bx-chevron-right"></i>CI/CD</li>
                     <li><i class="bx bx-chevron-right"></i>Docker</li>
                     <li><i class="bx bx-chevron-right"></i>Git / GitHub</li>
-                </ul>
-            </article>
-
-            <article class="skill-card">
-                <div class="skill-card-header">
-                    <div class="skill-card-icon"><i class="bx bx-brain"></i></div>
-                    <h3>Applied AI</h3>
-                </div>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i>NLP</li>
-                    <li><i class="bx bx-chevron-right"></i>PyTorch</li>
-                    <li><i class="bx bx-chevron-right"></i>NLI</li>
-                    <li><i class="bx bx-chevron-right"></i>Experta</li>
                 </ul>
             </article>
 
@@ -177,9 +162,20 @@
                     <li><i class="bx bx-chevron-right"></i>React</li>
                 </ul>
             </article>
-        </div>
-    </section>
 
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon"><i class="bx bx-brain"></i></div>
+                    <h3>Applied AI</h3>
+                </div>
+                <ul>
+                    <li><i class="bx bx-chevron-right"></i>NLP</li>
+                    <li><i class="bx bx-chevron-right"></i>PyTorch</li>
+                    <li><i class="bx bx-chevron-right"></i>NLI</li>
+                    <li><i class="bx bx-chevron-right"></i>Experta</li>
+                </ul>
+            </article>
+        </div>
     </section>
 
 <!--    <section class="services" id="services">
@@ -212,7 +208,7 @@
         </div>
     </section>-->
     <section class="projects" id="projects">
-        <h2 class="heading">Projects</h2>
+        <h2 class="heading">Projects <i class="projects-pulse" aria-hidden="true"></i></h2>
         <div class="projects-box">
             <div class="project-card">
                 <div class="project-media">
@@ -221,11 +217,13 @@
                     <div class="project-placeholder" hidden><i class="bx bx-building-house"></i></div>
                 </div>
                 <span class="project-framework"><i class="fab fa-node-js"></i> NestJS</span>
-                <h3>EasyRent Real Estate Platform</h3>
+                <h3>EasyRent Real Estate Backend</h3>
                 <p>
-                    A property platform developed first as a modular monolith, then evolved into an
-                    eight-service, message-driven architecture with geospatial search, caching, load balancing,
-                    subscriptions, and automated testing.</p>
+                    Built first as a modular monolith and later redesigned into eight NestJS services. Property
+                    discovery combines specification filters with PostGIS spatial queries for location-based search,
+                    while priority listings and subscriptions support the main business flow. RabbitMQ coordinates
+                    service communication, Redis caches repeated reads, Nginx balances traffic, and automated tests
+                    cover critical operations.</p>
                 <div class="project-tags" aria-label="Technologies used">
                     <span>PostgreSQL</span><span>PostGIS</span><span>RabbitMQ</span>
                     <span>Redis</span><span>Docker</span><span>Nginx</span>
@@ -242,13 +240,15 @@
                 <div class="project-media">
                     <img src="project-images/concurrent-orders.jpg" alt="Concurrent order processing backend"
                         onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
-                    <div class="project-placeholder" hidden><i class="bx bx-transfer"></i></div>
+                    <div class="project-placeholder" hidden><i class="fas fa-gears"></i></div>
                 </div>
                 <span class="project-framework"><i class="fab fa-node-js"></i> NestJS</span>
-                <h3>Concurrent Order Processing Backend</h3>
+                <h3>Concurrent Order Processing</h3>
                 <p>
-                    A queue-based backend focused on safe concurrent operations, retries,
-                    database locking, daily aggregation, and measurable load performance.</p>
+                    Processes concurrent purchase operations through BullMQ queues while protecting shared data with
+                    PostgreSQL transactions and database locks. Retry handling keeps temporary failures from dropping
+                    queued work, while scheduled aggregation produces daily sales summaries. Docker provides a
+                    reproducible environment, and JMeter exercises throughput and concurrent request behavior.</p>
                 <div class="project-tags" aria-label="Technologies used">
                     <span>BullMQ</span><span>Redis</span><span>PostgreSQL</span>
                     <span>JMeter</span><span>Docker</span>
@@ -259,15 +259,17 @@
 
             <div class="project-card">
                 <div class="project-media">
-                    <img src="project-images/bookstore.jpg" alt="Online bookstore platform"
+                    <img src="project-images/bookstore.jpg" alt="Bookstore e-commerce"
                         onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
                     <div class="project-placeholder" hidden><i class="bx bx-book"></i></div>
                 </div>
                 <span class="project-framework"><i class="fas fa-leaf"></i> Spring Boot</span>
-                <h3>Online Bookstore Platform</h3>
+                <h3>Bookstore E-commerce</h3>
                 <p>
-                    A full-stack bookstore with JWT authentication, book and category management, orders,
-                    reviews, and role-based administration.</p>
+                    Full-stack bookstore covering users, books, categories, orders, order items, and reviews. The Spring
+                    Boot REST API uses Spring Security and JWT to separate customer access from administrative catalog
+                    operations. A React and Material UI client consumes the API, with PostgreSQL storing the catalog and
+                    order relationships and Docker provisioning the database.</p>
                 <div class="project-tags" aria-label="Technologies used">
                     <span>Spring Security</span><span>PostgreSQL</span><span>React</span><span>Docker</span>
                 </div>
@@ -282,11 +284,12 @@
                     <div class="project-placeholder" hidden><i class="bx bx-check-shield"></i></div>
                 </div>
                 <span class="project-framework"><i class="fas fa-bolt"></i> FastAPI</span>
-                <h3>FactNLI Evidence Verification Platform</h3>
+                <h3>FactNLI — Fact-Checking & OSINT</h3>
                 <p>
-                    Arabic and English fact-checking platform with an integrated OSINT module for gathering
-                    supporting website intelligence. It retrieves evidence, ranks relevant passages, applies
-                    Natural Language Inference, and produces reviewable verdicts.</p>
+                    Bilingual system for checking Arabic and English claims against retrieved evidence. It ranks the
+                    most relevant passages, applies Natural Language Inference, and returns the supporting text with
+                    each verdict so the result can be reviewed. An integrated OSINT module adds website and domain
+                    intelligence, while FastAPI, PyTorch, FAISS, PostgreSQL, and React support the end-to-end workflow.</p>
                 <div class="project-tags" aria-label="Technologies used">
                     <span>OSINT</span><span>PyTorch</span><span>FAISS</span><span>PostgreSQL</span><span>React</span>
                 </div>
@@ -300,10 +303,12 @@
                     <div class="project-placeholder" hidden><i class="fab fa-laravel"></i></div>
                 </div>
                 <span class="project-framework"><i class="fab fa-laravel"></i> Laravel</span>
-                <h3>Clothing E-commerce API</h3>
+                <h3>Clothing Store API</h3>
                 <p>
-                    Backend APIs for a clothing store, covering products, carts, orders, and users with
-                    authentication, authorization, and request validation.</p>
+                    Laravel backend for clothing products, shopping carts, orders, and user accounts. Authentication
+                    and authorization separate customer actions from protected management operations, while request
+                    validation blocks invalid input before it reaches the application logic. The project focuses on
+                    RESTful endpoint design and clear handling of the store's core CRUD workflows.</p>
                 <div class="project-tags" aria-label="Technologies used">
                     <span>PHP</span><span>REST API</span><span>Authentication</span><span>Validation</span>
                 </div>
