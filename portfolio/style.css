@@ -302,7 +302,7 @@ Start of the About Me Section
 
 .about-img img {
     display: block;
-    width: min(29vw, 44rem);
+    width: min(24vw, 36rem);
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
@@ -1098,8 +1098,8 @@ Start of footer section
         margin: 2rem 0;
     }
 
-    .about img {
-        width: 52vw;
+    .about-img img {
+        width: 42vw;
     }
 
     .about-content p {
